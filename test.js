@@ -12,9 +12,8 @@ const { exec } = require('child_process'),
 
 
 if(process.argv[2] === 'start') {
-	write('/model/','user.model.js','https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/model/user.model.js','created or reset schema');
-	write('/config/','displayroutes.js','https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/config/displayroutes.js','created or reset display routes page');
-	write('/routes/','localuser.routes.js','https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/routes/localuser.routes.js','created or reset local user routes')
+	write('/model/','user.model.js','https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/model/user.model.js');
+	write('/config/','displayroutes.js','https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/config/displayroutes.js');
 }
 // if(process.argv[2] === 'add'){
 // 	if(process.argv[3] === 'facebook') {

@@ -5,6 +5,20 @@
 	<link rel="stylesheet" href="/shoebill.css" />
 </head>
 <body>
+
+
+	<% if (errors) { %>
+		<% errors.forEach((err) => { %>
+		<p class="msg error"><%= err %></p>
+		<% }) %>
+	<% } %>
+
+	<% if (successes) { %>
+		<% successes.forEach((success) => { %>
+		<p class="msg success"><%= success %></p>
+		<% }) %>
+	<% } %>
+
 	<h1>This is your customizable homepage </h1>
 	<!-- 
 	
@@ -19,5 +33,6 @@
 		if you would like to include a login form for the user login route, you can use <% include ./partials/login %>
 
 	-->
+
 </body>
 </html>

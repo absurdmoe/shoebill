@@ -10,8 +10,6 @@ const express 	   = require('express'),
 	key 	  	   = require('./key'),
 
 	displayRoutes  = require('./config/displayroutes'),
-	fbRoutes 	   = require('./routes/facebook.routes'),
-	googleRoutes   = require('./routes/google.routes'),
 	localRoutes    = require('./routes/localuser.routes'),
 	userRoutes 	   = require('./routes/user.routes'),
 
@@ -42,7 +40,7 @@ app.use('/user/',userRoutes);
 app.use(express.static('public'));
 
 app.get('/',(req,res) => {
-	res.render('index');
+	res.render('index',{errors: [],successes:[]});
 })
 
 
