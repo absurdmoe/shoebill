@@ -1,0 +1,19 @@
+{
+  "name": "shoebilljs",
+  "version": "0.0.1",
+  "description": "Shoebill.js is an npm package that handles local authentication as well as social media authentication using passport. This package is meant to be as similar to Ruby on Rails' Devise package",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohammadhunan97/shoebill.git"
+  },
+  "author": "mohammad hunan <mohammadhunan@gmail.com | @moe.mkr>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mohammadhunan97/shoebill/issues"
+  },
+  "homepage": "https://github.com/Mohammadhunan97/shoebill#readme"
+}
