@@ -42,21 +42,31 @@ Router.post('/login',(req,res)=>{
 displayRoutes.addRoute({type:'post',url:'/localuser/login/'})
 
 Router.post('/new',(req,res) => {
-	let newuser 		= new User;
-	newuser.lastupdated = Date.now();
-	newuser.username 	= req.body.username;
-	newuser.password 	= bcrypt.hashSync(req.body.password,salt); 
-	newuser.googleid 	= null;
-	newuser.facebookid  = null;
+	if(req.body.password === req.body.password2){
+		let newuser 		= new User;
+		newuser.lastupdated = Date.now();
+		newuser.username 	= req.body.username;
+		newuser.password 	= bcrypt.hashSync(req.body.password,salt); 
+		newuser.googleid 	= null;
+		newuser.facebookid  = null;
 
-	newuser.save((err, user) => {
-		if(err){ 
-			res.send(err);
-		}else{
-			req.session.localUser = user;
-			res.redirect = "/user/"+user._id;
-		}		
-	})
+		newuser.save((err, user) => {
+			if(err){ 
+				res.send(err);
+			}else{
+				console.log('barrt')
+				req.session.localUser = user;
+				console.log('farrt')
+				res.status(200);
+				res.redirect = "/user/"+user._id;
+				console.log('clarrt')
+				console.log(user);
+			}		
+		})
+	}else{
+		res.redirect("/"); // redirect with some message of incorrect login
+	}
+	
 })
 displayRoutes.addRoute({type:'post',url:'/localuser/new/'})
 
