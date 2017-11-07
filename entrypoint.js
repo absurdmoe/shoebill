@@ -9,7 +9,8 @@ const express 	   = require('express'),
 	key 	  	   = require('./key'),
 
 	displayRoutes  = require('./config/displayroutes'),
-	authRoutes     = require('./routes/auth.routes'),
+	fbRoutes 	   = require('./routes/facebook.routes'),
+	googleRoutes   = require('./routes/google.routes'),
 	localRoutes    = require('./routes/localuser.routes'),
 
 
@@ -20,16 +21,27 @@ mongoose.connect(db);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(session({ secret: key.secret }));
-
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(session({ secret: key.encryptionKey }));
 
 
-app.use('/auth/',authRoutes); //allows it to have modularity instead of adding different route files for each social media auth and adding them in later through the exec file
+
+
+app.use('/auth/facebook/',fbRoutes);
+app.use('/auth/google/',googleRoutes); 
 app.use('/localuser/',localRoutes);
 
 displayRoutes.viewRoutes();
+
+
+
+
+app.get('/',(req,res) => {
+	res.send('hello')
+})
+
+
 
 app.listen(port,(error)=>{
 	if(error){

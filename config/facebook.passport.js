@@ -13,7 +13,6 @@ passport.deserializeUser((id,done) => {
 	})
 })
 
-
 passport.use(new FacebookStrategy({
     clientID: key.facebook.client_ID,
     clientSecret: key.facebook.client_secret,
@@ -25,9 +24,12 @@ passport.use(new FacebookStrategy({
 			done(null,currentuser);
 		}else{
 			let newuser = new User;
-			newuser.facebookid = profile.id;
+			newuser.lastupdated = Date.now();
 			newuser.username = profile.displayName;
-			newuser.age = Math.floor(Math.random() * (100 - 14) + 14);
+			newuser.password = null;
+			newuser.googleid = null;
+			newuser.facebookid = profile.id;
+
 			newuser.save().then((thenewuser) => {
 				done(null,thenewuser);
 			})
@@ -35,7 +37,3 @@ passport.use(new FacebookStrategy({
 	})
   }
 ));
-
-
-
-

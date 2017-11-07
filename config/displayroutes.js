@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 let routes = [];
 
 module.exports = {
@@ -7,7 +8,7 @@ module.exports = {
 	viewRoutes: () => {
 		console.log('\n\n');
 		routes.forEach((route) => {
-			console.log(route.type,'\t\t',route.url);
+			console.log(chalk.red(route.type),'\t\t',chalk.green('http://localhost:3000'+route.url));
 		})	
 		console.log('\n\n');
 	}

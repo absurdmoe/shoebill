@@ -58,7 +58,7 @@ Router.post('/new',(req,res) => {
 		}		
 	})
 })
-displayRoutes.addRoute({type:'get',url:'/localuser/new/'})
+displayRoutes.addRoute({type:'post',url:'/localuser/new/'})
 
 
 Router.put('/update/:id',(req,res) => {
