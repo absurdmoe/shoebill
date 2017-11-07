@@ -31,8 +31,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.use('/auth/facebook/',fbRoutes);
-app.use('/auth/google/',googleRoutes); 
+try{
+	app.use('/auth/facebook/',require('./routes/facebook.routes'));
+}catch(err){
+	throw err;
+}
+try{
+	app.use('/auth/google/',require('./routes/google.routes')); 
+}catch(err){
+
+}
+
 app.use('/localuser/',localRoutes);
 app.use('/user/',userRoutes);
 
