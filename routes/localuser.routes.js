@@ -54,13 +54,8 @@ Router.post('/new',(req,res) => {
 			if(err){ 
 				res.send(err);
 			}else{
-				console.log('barrt')
 				req.session.localUser = user;
-				console.log('farrt')
-				res.status(200);
-				res.redirect = "/user/"+user._id;
-				console.log('clarrt')
-				console.log(user);
+				res.redirect("/user/one/"+user._id);
 			}		
 		})
 	}else{
@@ -84,7 +79,7 @@ Router.put('/update/:id',(req,res) => {
 						res.send(err);
 					}else{
 						req.session.localUser = user;
-						res.redirect = "/user/"+user._id;
+						res.redirect("/user/"+user._id);
 					}	
 				})
 			}
