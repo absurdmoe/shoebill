@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Mohammadhunan97/shoebill/issues"
   },
-  "homepage": "https://github.com/Mohammadhunan97/shoebill#readme"
+  "homepage": "https://github.com/Mohammadhunan97/shoebill#readme",
+  "dependencies": {
+    "mongoose": "^4.13.0"
+  }
 }
