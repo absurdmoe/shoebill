@@ -1,6 +1,6 @@
 .social-button{
 	width: 240px;
-	height: auto;
+	height: 40px;
 }
 .localuserinput{
     width: 300px;
@@ -21,4 +21,18 @@
 	border: 2px solid #e74c3c;
 	border-radius: 2px;
 	width: 20%;
+}
+.msg{
+	text-align: center;
+	border-radius: 3px;
+	padding: 5px;
+	color: white;	
+}
+.error{
+	border: 2px solid #c0392b;
+	background-color: #e74c3c;
+}
+.success{
+	border: 2px solid #27ae60;
+	background-color: #2ecc71;
 }

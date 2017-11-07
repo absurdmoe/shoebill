@@ -5,13 +5,20 @@
 	<link rel="stylesheet" href="/shoebill.css" />
 </head>
 <body>
-	<h1>This is your customizable homepage </h1>
-	<% include ./partials/facebooksignin %> 
-	<br/>
-	<% include ./partials/googlesignin %> 
-	<br/>
-	<% include ./partials/signup %>
-	<br/>
-	<% include ./partials/login %>
+	<% if (errors) { %>
+		<% errors.forEach((err) => { %>
+		<p class="msg error"><%= err %></p>
+		<% }) %>
+	<% } %>
+
+	<% if (successes) { %>
+		<% successes.forEach((success) => { %>
+		<p class="msg success"><%= success %></p>
+		<% }) %>
+	<% } %>
+
+
+	<h1 style="text-align: center">This is your customizable homepage </h1>
+
 </body>
 </html>

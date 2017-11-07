@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Shoebill.js is an npm package that handles local authentication as well as social media authentication using passport. This package is meant to be as similar to Ruby on Rails' Devise package",
   "main": "app.js",
+  "bin":{
+    "shoebill":"shoebill.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
