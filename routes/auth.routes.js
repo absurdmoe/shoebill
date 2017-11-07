@@ -1,9 +1,10 @@
 /* this file is for passportjs social media routes
 	 all files in here go underneath yourorigin/auth/<route>
 */
-const Router 	  = require('express').Router(),
-	passport 	  = require('passport'),
-	passportSetup = require('./googlepassport');
+const Router 	 	 = require('express').Router(),
+	passport 	  	 = require('passport'),
+	facebookPassport = require('../config/facebook.passport'),
+	googlePassport   = require('../config/google.passport');
 
 
 Router.get('/facebook/', passport.authenticate('facebook',{

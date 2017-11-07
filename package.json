@@ -19,6 +19,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.16.2",
-    "mongoose": "^4.13.0"
+    "mongoose": "^4.13.0",
+    "passport-google-oauth20": "^1.0.0"
   }
 }
