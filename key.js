@@ -11,5 +11,6 @@ module.exports = {
 		client_ID: '<your facebook client id>',
 		client_secret: '<your facebook client secret>'
 	},
-	secret: '<your random session secret>'
+	secret: '<your random session secret>',
+	foo:'bar'
 }
