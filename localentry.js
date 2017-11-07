@@ -54,15 +54,8 @@ app.get('/',(req,res) => {
 
 
 
-
 displayRoutes.addRoute({type:'get',url:'/'})
 displayRoutes.viewRoutes();
-
-
-
-
-
-
 
 
 app.listen(port,(error)=>{
