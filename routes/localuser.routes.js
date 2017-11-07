@@ -4,21 +4,42 @@
 
 
 
-const Router = require('express').Router(),
-	User	 = require('../model/user.model'),
-	bcrypt 	 = require('bcryptjs'),
-	salt 	 = bcrypt.genSaltSync(10);
+const Router 	   = require('express').Router(),
+	User		   = require('../model/user.model'),
+	bcrypt 		   = require('bcryptjs'),
+	salt 	 	   = bcrypt.genSaltSync(10),
+	displayRoutes  = require('../config/displayroutes');
 
 
 /* NOTE: the route /localuser/index below is purely for debugging/testing 
-	purposes it is highly recommended to delete this route.
-*/
-Router.get('/index',(req,res) => {
-	User.find({}).exec((error,user) => {
-		if(error) res.send(error);
-		res.send(user);
+	purposes it is highly recommended hat you don't use this route in production */
+
+// Router.get('/index',(req,res) => {
+// 	User.find({}).exec((error,user) => {
+// 		if(error) res.send(error);
+// 		res.send(user);
+// 	})
+// })
+
+Router.get('/signout',(req,res)=>{
+	req.session.localUser = null;
+	res.redirect('/');
+})
+displayRoutes.addRoute({type:'get',url:'/localuser/signout/'})
+
+
+Router.post('/login',(req,res)=>{
+	User.find({username: req.body.username},(err,user)=>{
+		if(user.length === 0 || bcrypt.compareSync(req.body.password, user[0].password) !== true){
+			// if there's no user returned or if the password does not match
+			res.redirect("/");
+		}else{
+			req.session.localUser = user[0];
+			res.redirect("/user/"+user[0]._id);
+		}
 	})
 })
+displayRoutes.addRoute({type:'post',url:'/localuser/login/'})
 
 Router.post('/new',(req,res) => {
 	let newuser 		= new User;
@@ -37,6 +58,8 @@ Router.post('/new',(req,res) => {
 		}		
 	})
 })
+displayRoutes.addRoute({type:'get',url:'/localuser/new/'})
+
 
 Router.put('/update/:id',(req,res) => {
 	if(req.session.localUser && req.session.localUser._id === req.params.id) {
@@ -54,6 +77,7 @@ Router.put('/update/:id',(req,res) => {
 		})
 	}
 })
+displayRoutes.addRoute({type:'put',url:'/localuser/update/:id'})
 
 Router.delete('/delete/:id',(req,res) => {
 	if(req.session.localUser && req.session.localUser._id === req.params.id) {
@@ -63,5 +87,6 @@ Router.delete('/delete/:id',(req,res) => {
 		})
 	}
 })
+displayRoutes.addRoute({type:'delete',url:'/localuser/delete/:id'})
 
 module.exports = Router;

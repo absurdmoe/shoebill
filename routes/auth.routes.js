@@ -4,25 +4,32 @@
 const Router 	 	 = require('express').Router(),
 	passport 	  	 = require('passport'),
 	facebookPassport = require('../config/facebook.passport'),
-	googlePassport   = require('../config/google.passport');
+	googlePassport   = require('../config/google.passport'),
+	displayRoutes  	 = require('../config/displayroutes');
 
 
 Router.get('/facebook/', passport.authenticate('facebook',{
 	scope: ['public_profile']
 }));
-Router.get('/facebook/redirect/',passport.authenticate('facebook'),(req,res) => {
-	let html = '<p>successfully logged in with facebook</p><br/><a href="/user/'+req.user._id+'">Your Homepage</a>'
-	res.send(html);
-})
+displayRoutes.addRoute({type:'get',url:'/auth/facebook/'});
 
+
+
+Router.get('/facebook/redirect/',passport.authenticate('facebook'),(req,res) => {
+	//success redirect to homepage view for user/req.user._id
+})
+displayRoutes.addRoute({type:'get',url:'/auth/facebook/redirect'});
 
 
 Router.get('/google/', passport.authenticate('google',{
 	scope: ['profile']
 }));
+displayRoutes.addRoute({type:'get',url:'/auth/google/'});
+
+
 Router.get('/google/redirect/',passport.authenticate('google'),(req,res) => {
-	let html = '<p>successfully logged in with google</p><br/><a href="/user/'+req.user._id+'">Your Homepage</a>'
-	res.send(html);
+	//success redirect to homepage view for user/req.user._id
 })
+displayRoutes.addRoute({type:'get',url:'/auth/google/redirect'});
 
 module.exports = Router;
