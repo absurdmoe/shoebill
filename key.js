@@ -1,15 +1,14 @@
 /* this file should have your apikeys and any secrets client ids, etc 
 	it is recommended to add this file to your gitignore file for security purposes
 */
-
 module.exports = {
 	google: {
-		client_ID: '<your google client id>',
-		client_secret: '<your google client secret>'
+		client_ID: '549422657403-05kudgvoa78ra75c8j69m1sg20dv533d.apps.googleusercontent.com',
+		client_secret: 'i1K7sNe-sHKN-Ly5L_mDvHJB'
 	},
 	facebook: {
-		client_ID: '<your facebook client id>',
-		client_secret: '<your facebook client secret>'
+		client_ID: '363548087429452',
+		client_secret: '36f9fbbb76d448fd20ea9409736c425b'
 	},
-	secret: '<your random session secret>'
+	encryptionKey: 'foobar and cats'
 }

@@ -12,6 +12,7 @@ const express 	   = require('express'),
 	fbRoutes 	   = require('./routes/facebook.routes'),
 	googleRoutes   = require('./routes/google.routes'),
 	localRoutes    = require('./routes/localuser.routes'),
+	userRoutes 	   = require('./routes/user.routes'),
 
 
 	db			   = 'mongodb://localhost/shoebill',
@@ -19,18 +20,30 @@ const express 	   = require('express'),
 
 mongoose.connect(db);
 
+
+
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(passport.initialize());
-app.use(passport.session());
 app.use(session({ secret: key.encryptionKey }));
 
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 app.use('/auth/facebook/',fbRoutes);
 app.use('/auth/google/',googleRoutes); 
 app.use('/localuser/',localRoutes);
+app.use('/user/',userRoutes);
+
+
+
+
+
+
+
+
 
 displayRoutes.viewRoutes();
 

@@ -12,8 +12,7 @@ Router.get('/', passport.authenticate('google',{
 	scope: ['profile']
 }));
 Router.get('/redirect',passport.authenticate('google'),(req,res) => {
-	let html = '<p>successfully logged in with google</p><br/><a href="/user/'+req.user._id+'">Your Homepage</a>'
-	res.send(html);
+	res.redirect('/user/one/'+req.user._id);
 })
 
 

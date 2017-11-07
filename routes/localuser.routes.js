@@ -35,7 +35,7 @@ Router.post('/login',(req,res)=>{
 			res.redirect("/");
 		}else{
 			req.session.localUser = user[0];
-			res.redirect("/user/"+user[0]._id);
+			res.redirect("/user/one/"+user[0]._id);
 		}
 	})
 })
@@ -70,8 +70,12 @@ Router.put('/update/:id',(req,res) => {
 				user.password = bcrypt.hashSync(req.body.password,salt) || user.password;
 
 				user.save((err,user)=> {
-					if(err) res.send(err);
-					res.send(user);
+					if(err){ 
+						res.send(err);
+					}else{
+						req.session.localUser = user;
+						res.redirect = "/user/"+user._id;
+					}	
 				})
 			}
 		})
