@@ -2,4 +2,14 @@
 	it is recommended to add this file to your gitignore file for security purposes
 */
 
-module.exports = {}
+module.exports = {
+	google: {
+		client_ID: '<your google client id>',
+		client_secret: '<your google client secret>'
+	},
+	facebook: {
+		client_ID: '<your google client id>',
+		client_secret: '<your google client secret>'
+	},
+	secret: '<your random session secret>'
+}
