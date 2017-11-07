@@ -1,7 +1,6 @@
 /*
 	this page is for a compilation of all routes for all user, regardless of whether its a passport or local user
 */
-
 const Router 	 	 = require('express').Router(),
 	displayRoutes  	 = require('../config/displayroutes');
 
