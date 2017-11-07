@@ -1,18 +1,22 @@
 const { exec } = require('child_process'),
+	path 	   = require('path'),
 	fs 		   = require('fs');
 
+
+
+// path.resolve(__dirname, some, dir);
 module.exports = {
 	write: (directory,desiredFilename,rawFile,msg) => {
-		let folder = __dirname + directory,
-			path   = folder + desiredFilename;
+		let folder = path.resolve(__dirname,directory),
+			mypath   = folder + desiredFilename;
 		try{
 			fs.lstatSync(folder).isDirectory();
-			exec('curl -o ' + path + ' ' + rawFile);
-			process.stdout.write(msg + ' in ' + path + ' \n');
+			exec('curl -o ' + mypath + ' ' + rawFile);
+			process.stdout.write(msg + ' in ' + mypath + ' \n');
 		}catch(err){
 			fs.mkdirSync(folder);
 			exec('curl -o' + path + ' ' + rawFile);
-			process.stdout.write( msg + ' in: ' + path + ' \n');
+			process.stdout.write( msg + ' in: ' + mypath + ' \n');
 		}
 	}
 }
@@ -26,13 +30,3 @@ module.exports = {
 	--msg must be in the following form: 'your message explaining what you did' with no spaces at the end of the string
 */
 
-
-	// try{
-	// 	fs.lstatSync(__dirname + "/model").isDirectory(); //if model directory exists
-	// 	exec('curl -o ' + __dirname + '/model/user.model.js https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/model/user.model.js');
-	// 	process.stdout.write('reset schema in: /model/user.model.js \n');
-	// }catch(err) {
-	// 	fs.mkdirSync(__dirname + '/model');
-	// 	exec('curl -o ' + __dirname + '/model/user.model.js https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/model/user.model.js');
-	// 	process.stdout.write('created schema in: /model/user.model.js \n');
-	// }

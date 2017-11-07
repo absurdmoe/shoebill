@@ -5,11 +5,12 @@
 */
 
 const { exec } = require('child_process'),
-	fs 		   = require('fs'),
-	{ write }  = require('./createfile');
+	{ write }  = require('./createfile'),
+	path 	   = require('path'),
+	fs 		   = require('fs');
 // let cmd = '&&';
 
-
+// path.resolve(__dirname, some, dir);
 
 if(process.argv[2] === 'start') {
 	write('/model/','user.model.js','https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/model/user.model.js','created or reset schema');
