@@ -21,5 +21,15 @@
   "bugs": {
     "url": "https://github.com/Mohammadhunan97/shoebill/issues"
   },
-  "homepage": "https://github.com/Mohammadhunan97/shoebill#readme"
+  "homepage": "https://github.com/Mohammadhunan97/shoebill#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "chalk": "^2.3.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^4.13.0",
+    "passport": "^0.4.0"
+  }
 }
