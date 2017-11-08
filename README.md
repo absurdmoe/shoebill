@@ -36,9 +36,25 @@
 	* shoebill add <socialmedia> | shoebill add facebook, shoebill add google (not yet available)
 
 ### Goals:
-* Make list all routes executable [ ]
-* Make add facebook executable for oauth 2.0 sign in [ ]
-* Make add google executable for oauth 2.0 sign in [ ]
-* Add posts resource, including ejs layouts for posts, models for post, and routes for posts. [ ]
-* Add email support  [ ]
-* Make more similar to Devise [ ]
+
+- [ ] Create "list all routes" executable to list all available routes and methods upon request
+- [ ] Create "shoebill add google" executable for oauth 2.0 sign in
+- [ ] Create "shoebill add facebook" executable for oauth 2.0 sign in
+- [ ] Add posts resource, including ejs layout, models, and routes for this resource.
+- [ ] Add forgot password feature and mailing system for users
+- [ ] Bring API closer to Devise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
