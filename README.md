@@ -5,13 +5,13 @@
 	* lightweight and modular authentication
 	* already setup encryption and sessions
 	* plugin and use different features such as local authentication, google authentication, facebook authentication, and more (coming soon) easily through a single command using our api
-
+	* lists routes for ease of use
 ### To install run the following command:
 	* npm install shoebilljs -g
 
 ### To initially setup your project:
 	* cd into_your_project
-	* npm install
+	* npm init
 	* npm install express mongoose passport body-parser express-session ejs bcryptjs chalk 
 	* shoebill start <entryfile.js> <~/the_absolute_path_of_your_local_repo> 
 	* if all files (listed below) are not automatically generated, run the above command again

@@ -1,0 +1,25 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "example app using authentication with shoebill.js npm package",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohammadhunan97/shoebill.git"
+  },
+  "keywords": [
+    "['authentication'",
+    "'google'",
+    "'facebook'",
+    "'oauth2.0']"
+  ],
+  "author": "mohammad hunan <mohammadhunan@gmail.com | mohammadhunan.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mohammadhunan97/shoebill/issues"
+  },
+  "homepage": "https://github.com/Mohammadhunan97/shoebill#readme"
+}
