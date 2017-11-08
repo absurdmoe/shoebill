@@ -12,6 +12,8 @@ module.exports = {
 		client_ID: 'your client id',
 		client_secret: 'your client secret'
 	},
-	encryptionKey: 'your secret'
+	encryptionKey: 'your secret',
+	db: 'your db name',
+	remoteURL: 'your remote mongoose db url'
 }
 

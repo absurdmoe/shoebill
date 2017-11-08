@@ -15,7 +15,7 @@ const express 	   = require('express'),
 	userRoutes 	   = require('./routes/user.routes'),
 
 
-	db			   = 'mongodb://localhost/shoebill',
+	db			   = key.remoteURL || 'mongodb://localhost/'+key.db,
 	port		   = process.env.PORT || 3000;
 
 mongoose.connect(db);
