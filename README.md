@@ -1,6 +1,11 @@
 # Thank you for using Shoebill.js:
 
 
+### Features:
+	* lightweight and modular authentication
+	* already setup encryption and sessions
+	* plugin and use different features such as local authentication, google authentication, facebook authentication, and more (coming soon)
+
 ### To install run the following command:
 	* npm install shoebilljs -g
 

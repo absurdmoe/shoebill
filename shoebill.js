@@ -27,6 +27,7 @@ if(process.argv[2] === 'start') {
 	write(root,'./',process.argv[3],'https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/localentry.js', 'created or reset entry point'); //entry point
 	write(root,'routes','user.routes.js','https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/routes/user.routes.js','created or reset user routes which can be used for local or oauth/social media users');
 	write(root,'./','key.js','https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/samplekey.js','created sample key.js remember to replace the info in this file with your actual info');
-
 	process.stdout.write('\n\n remember to replace keys and secrets in key.js with your personal keys and secrets \n\n');
+}else if(process.argv[2] === 'add'){
+	
 }
