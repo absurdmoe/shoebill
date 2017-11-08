@@ -48,5 +48,5 @@
 ### Example:
 ![Alt text][id]
 [id]: https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/public/img/example.png  "Optional title attribute"
-
+<img src="https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/public/img/example.png" />
 
