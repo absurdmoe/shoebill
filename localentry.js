@@ -7,6 +7,7 @@ const express 	   = require('express'),
 	bodyParser	   = require('body-parser'),
 	session 	   = require('express-session'),
 	ejs			   = require('ejs'),
+	fs 			   = require('fs');
 	key 	  	   = require('./key'),
 
 	displayRoutes  = require('./config/displayroutes'),
@@ -31,16 +32,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-try{
-	app.use('/auth/facebook/',require('./routes/facebook.routes'));
-}catch(err){
-	throw err;
-}
-try{
-	app.use('/auth/google/',require('./routes/google.routes')); 
-}catch(err){
 
+if (fs.existsSync('./routes/facebook.routes')) {
+   app.use('/auth/facebook/',require('./routes/facebook.routes'));
 }
+
+if(fs.existsSync('./routes/google.routes')) {
+	app.use('/auth/google/',require('./routes/google.routes'));
+}
+
+
 
 app.use('/localuser/',localRoutes);
 app.use('/user/',userRoutes);
