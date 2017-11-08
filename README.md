@@ -44,17 +44,3 @@
 - [ ] Add forgot password feature and mailing system for users
 - [ ] Bring API closer to Devise
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
