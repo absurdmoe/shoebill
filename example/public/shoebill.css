@@ -10,9 +10,11 @@
     border: 1px solid black;
 }
 .localuserform{
-	background-color: #bdc3c7;
+	background-color: #3498db;
 	display: inline-block;
 	text-align: center;
+	padding: 10px;
+	border-radius: 5px;
 }
 .localusersubmit{
 	background-color: #e74c3c;

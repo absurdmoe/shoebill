@@ -33,13 +33,13 @@ app.use(passport.session());
 
 
 
-if (fs.existsSync('./routes/facebook.routes')) {
+// if (fs.existsSync('./routes/facebook.routes')) {
    app.use('/auth/facebook/',require('./routes/facebook.routes'));
-}
+//}
 
-if(fs.existsSync('./routes/google.routes')) {
+//if(fs.existsSync('./routes/google.routes')) {
 	app.use('/auth/google/',require('./routes/google.routes'));
-}
+//}
 
 
 

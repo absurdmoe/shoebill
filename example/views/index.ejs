@@ -3,10 +3,9 @@
 <head>
 	<title>Homepage</title>
 	<link rel="stylesheet" href="/shoebill.css" />
+	<link rel="stylesheet" href="/example.css" />
 </head>
 <body>
-
-
 	<% if (errors) { %>
 		<% errors.forEach((err) => { %>
 		<p class="msg error"><%= err %></p>
@@ -18,9 +17,17 @@
 		<p class="msg success"><%= success %></p>
 		<% }) %>
 	<% } %>
-	<h1>This is your customizable homepage </h1>
-
-
+	<h1 class="title-logo">Welcome to Node Blog </h1>
+	<div id="signup-local-form"><% include ./partials/signup %></div>
+	<div id="login-local-form"><% include ./partials/login %></div>
+	<h3> --- OR --- </h3>
+	<br/>
+	<% include ./partials/localbutton %>
+	<br/>
+	<br/>
+	<% include ./partials/facebooksignin %>
+	<br/>
+	<% include ./partials/googlesignin %>
 
 	<%/*
 

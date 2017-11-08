@@ -1,0 +1,27 @@
+<button class="social-button" id="local-button"></button>
+
+<script>
+	let localButtons = ['Already Have an Account? Login', 'Dont have an account? Sign up'];
+	let ids = ['login-local-form','signup-local-form'];
+
+	document.getElementById('local-button').innerHTML = localButtons[0];
+	document.getElementById(ids[0]).style.display = 'none';
+	document.getElementById(ids[1]).style.display = 'inline-block';
+	let oldid = ids.shift();
+	let old = localButtons.shift();
+	ids.push(oldid);
+	localButtons.push(old);
+
+	document.getElementById('local-button').addEventListener('click',()=>{
+		document.getElementById('local-button').innerHTML = localButtons[0];
+		document.getElementById(ids[0]).style.display = 'none';
+		document.getElementById(ids[1]).style.display = 'inline-block';
+		let old = localButtons.shift();
+		let oldid = ids.shift();
+
+		localButtons.push(old);
+		ids.push(oldid);
+	})
+
+</script>
+
