@@ -4,17 +4,10 @@ const { exec } = require('child_process'),
 
 
 
-function foo(directory,desiredFilename){
-  let folder = path.resolve(__dirname,directory,desiredFilename);
-  console.log(folder);
-}
-
-foo('model','user.js')
-
 module.exports = {
-	write: (directory,desiredFilename,rawFile,msg) => {
-		let folder = path.resolve(__dirname,directory);
-		let mypath = path.resolve(__dirname,directory,desiredFilename);
+	write: (root,directory,desiredFilename,rawFile,msg) => {
+		let folder = path.resolve(root,directory);
+		let mypath = path.resolve(root,directory,desiredFilename);
 		try{
 			fs.lstatSync(folder).isDirectory();
 			exec('curl -o ' + mypath + ' ' + rawFile);
