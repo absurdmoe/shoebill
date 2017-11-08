@@ -38,8 +38,8 @@
 ### Goals:
 
 - [ ] Create "list all routes" executable to list all available routes and methods upon request
-- [ X ] Create "shoebill add google" executable for oauth 2.0 sign in
-- [ X ] Create "shoebill add facebook" executable for oauth 2.0 sign in
+- [x] Create "shoebill add google" executable for oauth 2.0 sign in
+- [x] Create "shoebill add facebook" executable for oauth 2.0 sign in
 - [ ] Add posts resource, including ejs layout, models, and routes for this resource.
 - [ ] Add forgot password feature and mailing system for users
 - [ ] Bring API closer to Devise
