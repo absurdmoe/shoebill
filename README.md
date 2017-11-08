@@ -33,7 +33,7 @@
 
 ### API:
 	* shoebill start <entryfile> <absolute__local_project_path> | shoebill start app.js ~/tumblrclone
-	* shoebill add <socialmedia> | shoebill add facebook, shoebill add google (not yet available)
+	* shoebill add <socialmedia> <absolute__local_project_path> | shoebill add facebook ~/tumblrclone, shoebill add google ~/tumblrclone
 
 ### Goals:
 
