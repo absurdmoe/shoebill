@@ -1,6 +1,6 @@
 {
   "name": "shoebilljs",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Shoebill.js is an npm package that handles local authentication as well as social media authentication using passport. This package is meant to be as similar to Ruby on Rails' Devise package",
   "main": "app.js",
   "bin":{
