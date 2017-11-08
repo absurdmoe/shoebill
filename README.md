@@ -38,15 +38,17 @@
 ### Goals:
 
 - [ ] Create "list all routes" executable to list all available routes and methods upon request
-- [ ] Create "shoebill add google" executable for oauth 2.0 sign in
-- [ ] Create "shoebill add facebook" executable for oauth 2.0 sign in
+- [ X ] Create "shoebill add google" executable for oauth 2.0 sign in
+- [ X ] Create "shoebill add facebook" executable for oauth 2.0 sign in
 - [ ] Add posts resource, including ejs layout, models, and routes for this resource.
 - [ ] Add forgot password feature and mailing system for users
 - [ ] Bring API closer to Devise
+- [ ] Add React Native Android & IOS support
 
 
 ### Example:
-![Alt text][id]
-[id]: https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/public/img/example.png  "Optional title attribute"
-<img src="https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/public/img/example.png" />
+<img src="https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/public/img/example.png" alt="auth app example" />
+	* Some notes on this example app:
+		* You can test it out by git cloning this repository, cd-ing into the repo, running npm install, and then node index.js
+		* This example app took me about an hour in total, linking the authentication was fairly simple and went without any issues, though I did have to comment out the fs.existsSync from the entrypoint file after I ran shoebill add google and shoebill add facebook. Other than that, it was very simple to use and basically just involved styling.
 
