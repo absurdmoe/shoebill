@@ -4,7 +4,7 @@
 ### Features:
 	* lightweight and modular authentication
 	* already setup encryption and sessions
-	* plugin and use different features such as local authentication, google authentication, facebook authentication, and more (coming soon)
+	* plugin and use different features such as local authentication, google authentication, facebook authentication, and more (coming soon) easily through a single command using our api
 
 ### To install run the following command:
 	* npm install shoebilljs -g
