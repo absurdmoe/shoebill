@@ -46,4 +46,4 @@
 
 
 ### Example:
-	![example of auth](https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/public/img/example.png)
+	![Alt text](https://raw.githubusercontent.com/Mohammadhunan97/shoebill/master/public/img/example.png)
