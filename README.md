@@ -6,6 +6,7 @@
 	* already setup encryption and sessions
 	* plugin and use different features such as local authentication, google authentication, facebook authentication, and more (coming soon) easily through a single command using our api
 	* lists routes for ease of use
+
 ### To install run the following command:
 	* npm install shoebilljs -g
 
@@ -16,6 +17,11 @@
 	* shoebill start <entryfile.js> <~/the_absolute_path_of_your_local_repo> 
 	* if all files (listed below) are not automatically generated, run the above command again
 
+### To add a social media authentication:
+	* steps above must be completed
+	* shoebill add <social_media> <~/the_absolute_path_of_your_local_repo> , for instance shoebill add facebook ~/tumblrclone (currently we only support google and facebook oauth)
+	* in your views/index.ejs add <% include ./partials/<social_media>signin.ejs %>, for instance <% include ./partials/facebooksignin.ejs %>
+	* in your entryfile, just before app.use(express.static('public')), write: app.use('/auth/<socialmedai>/',require('./routes/<socialmedia>.routes')); for instance app.use('/auth/facebook/',require('./routes/facebook.routes'));
 
 ### Files that are created by shoebill start <entryfile.js> <~/the_absolute_path_of_your_local_repo>:
 	* Note: by running shoebill start you will overwrite any existing files by the below names
