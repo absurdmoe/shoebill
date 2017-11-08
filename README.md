@@ -44,3 +44,6 @@
 - [ ] Add forgot password feature and mailing system for users
 - [ ] Bring API closer to Devise
 
+
+### Example:
+	![example of auth](public/img/example.png)
