@@ -21,11 +21,6 @@ const Router 	   = require('express').Router(),
 // 	})
 // })
 
-Router.get('/signout',(req,res)=>{
-	req.session.localUser = null;
-	res.redirect('/');
-})
-displayRoutes.addRoute({type:'get',url:'/localuser/signout/'})
 
 
 Router.post('/login',(req,res)=>{
